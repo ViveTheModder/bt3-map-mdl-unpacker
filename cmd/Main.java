@@ -86,7 +86,7 @@ public class Main
 		File[] sectFiles = outFolder.listFiles();
 		if (sectFiles.length==9)
 		{
-			if (!(sectFiles[8].length()==16 || sectFiles[8].length()==32))
+			if (sectFiles[8].length()>64)
 			{
 				Files.move(sectFiles[8].toPath(), sectFiles[8].toPath().resolveSibling(8+"_"+SECT_FILENAMES[4]));
 				Files.move(sectFiles[7].toPath(), sectFiles[7].toPath().resolveSibling(7+"_"+SECT_FILENAMES[8]));
