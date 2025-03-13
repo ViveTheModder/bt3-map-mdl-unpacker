@@ -84,11 +84,14 @@ public class Main
 		}
 		//check if the given map is made by Chuchoman/Kinnikuchu, then fix the file names (because the sections are ordered differently)
 		File[] sectFiles = outFolder.listFiles();
-		if (!(sectFiles[8].length()==16 || sectFiles[8].length()==32))
+		if (sectFiles.length==9)
 		{
-			Files.move(sectFiles[8].toPath(), sectFiles[8].toPath().resolveSibling(8+"_"+SECT_FILENAMES[4]));
-			Files.move(sectFiles[7].toPath(), sectFiles[7].toPath().resolveSibling(7+"_"+SECT_FILENAMES[8]));
-			Files.move(sectFiles[4].toPath(), sectFiles[7].toPath().resolveSibling(4+"_"+SECT_FILENAMES[7]));
+			if (!(sectFiles[8].length()==16 || sectFiles[8].length()==32))
+			{
+				Files.move(sectFiles[8].toPath(), sectFiles[8].toPath().resolveSibling(8+"_"+SECT_FILENAMES[4]));
+				Files.move(sectFiles[7].toPath(), sectFiles[7].toPath().resolveSibling(7+"_"+SECT_FILENAMES[8]));
+				Files.move(sectFiles[4].toPath(), sectFiles[7].toPath().resolveSibling(4+"_"+SECT_FILENAMES[7]));
+			}
 		}
 	}
 	public static void main(String[] args) throws IOException
