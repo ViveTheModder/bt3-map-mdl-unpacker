@@ -1,8 +1,18 @@
 # bt3-map-mdl-unpacker
 A modding tool for the PS2 version of DBZ Budokai Tenkaichi 3 that exports one or all sections of the ``00_map_main_data.mdl`` file within any map PAK.
 
-The tool also works for custom maps like those from Kinnikuchu's site, not just other vanilla/modified maps.
+The tool also works for custom maps like those from [Kinnikuchu's site](https://kinnikuchu.com/mods), not just other vanilla/modified maps.
+
+Currently, the supported languages are English, German, Italian and Portuguese (Brazilian).
+
 # Demonstration
+## Multi-Language Support
+![image](https://github.com/user-attachments/assets/6e721daa-f21f-46dd-ae58-8b3bf052beca)
+
+![image](https://github.com/user-attachments/assets/d25d2de2-945b-4f46-a2c7-fd05568da5f1)
+
+![image](https://github.com/user-attachments/assets/348799a2-f4ea-4aeb-a47e-8fdbb03e597f)
+
 ## CLI
 To run the tool from the command line, add ``-c`` as an argument.
 
