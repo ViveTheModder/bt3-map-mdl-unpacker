@@ -1,0 +1,30 @@
+MDL Sektion für den Export:
+Datei
+Hilfe
+Über
+Datei öffnen...
+Gemacht von: 
+Recherche von: 
+Stark inspiriert von: 
+Ausnahme
+Es wurde keine MDL oder PAK Datei angegeben!
+Alle Sektionen erfolgreich extrahiert in [time] s!
+Ungültige PAK Datei! Ihre MDL kann nicht abgerufen werden da sie entweder die falsche& Anzahl an Einträgen hat oder die Dateigröße nicht mit dem letzten Eintrag übereinstimmt.
+Exportieren...
+Alles exportieren...
+erfolgreich extrahiert in [time] s!
+Sprache
+Koordinaten der zerstörbaren Objekte
+Daten der Map
+Daten des Map Models
+Rendering Indizes
+Map Texturen Container (DBT)
+Rendering Distanzen
+Kollisionsdaten
+Daten der zerstörbaren Objekte
+Parameter der Mapbarriere
+Extrahiere [section] von [filename]...
+Gib einen validen Pfad zu einer BT3 Map's PAK, MDL oder UNK (ew) Datei an:
+Gib eine der unteren Zahlen an, welche für die Extrahierung der jeweiligen Sektion steht:
+Zeit: [time] s
+Übersetzt von:

@@ -1,15 +1,19 @@
 package cmd;
 //Budokai Tenkaichi 3 Map Model Unpacker by ViveTheModder
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
+import gui.App;
 
 public class Main 
 {
-	static final int[] MDL_POSITIONS = {28,36,44,52,60,64,72,80,84};
+	public static boolean isGuiDisabled=true;
+	private static final int[] MDL_POSITIONS = {28,36,44,52,60,64,72,80,84};
 	public static final String[] SECT_NAMES = 
 	{"Destructible Objects' Coordinates","Map Model Data","Map Model Part Data",
 	"Rendering Indices","Map Texture Container (DBT)","Rendering Distances",
@@ -45,6 +49,27 @@ public class Main
 		map.read(mdl);
 		return mdl;
 	}
+	private static void setLangIndexFromLocale()
+	{
+		Locale loc = Locale.getDefault(Locale.Category.FORMAT);
+		File langFolder = new File("./lang/");
+		File[] langFiles = langFolder.listFiles(new FilenameFilter()
+		{
+			@Override
+			public boolean accept(File dir, String name) 
+			{
+				return name.toLowerCase().startsWith("lang-") && name.toLowerCase().endsWith(".txt");
+			}
+		});
+		for (File lang: langFiles)
+		{
+			String fileName = lang.getName();
+			String[] fileNameArray = fileName.split("-");
+			int id = Integer.parseInt(fileNameArray[1]);
+			String abbr = fileNameArray[2].substring(0,fileNameArray[2].length()-4);
+			if (abbr.equals(loc.getLanguage())) App.langIndex=id;
+		}
+	}
 	public static RandomAccessFile getMap(File src, String fileExt) throws IOException
 	{
 		RandomAccessFile map = new RandomAccessFile(src,"r");
@@ -78,7 +103,8 @@ public class Main
 			RandomAccessFile raf = new RandomAccessFile(out,"rw");
 			//in case a map is changed and then unpacked, the section contents are erased first then overwritten
 			if (out.exists()) raf.setLength(0); 
-			System.out.println("Extracting "+SECT_NAMES[sectIndex]+" from "+fileName+"...");
+			if (isGuiDisabled) 
+				System.out.println(App.LANG_TEXT[App.langIndex][25].replace("[section]", SECT_NAMES[sectIndex]).replace("[filename]", fileName));
 			raf.write(section);
 			raf.close();
 		}
@@ -96,17 +122,23 @@ public class Main
 	}
 	public static void main(String[] args) throws IOException
 	{
+		setLangIndexFromLocale();
+		if (App.langIndex!=0) 
+		{
+			App.setLangText();
+			System.arraycopy(App.LANG_TEXT[App.langIndex], 16, Main.SECT_NAMES, 0, 9);
+		}
 		if (args.length>0)
 		{
 			if (args[0].equals("-c"))
-			{
+			{	
 				int sectNum=-1;
 				File src=null;
 				RandomAccessFile map=null;
 				Scanner sc = new Scanner(System.in);
 				while (src==null)
 				{
-					System.out.println("Enter a valid path to a BT3 map's PAK, MDL or UNK file:");
+					System.out.println(App.LANG_TEXT[App.langIndex][26]);
 					String path = sc.nextLine();
 					File temp = new File(path);
 					String fileName = temp.getName().toLowerCase();
@@ -119,7 +151,8 @@ public class Main
 				}
 				while (sectNum<0)
 				{
-					System.out.println("Enter one of the numbers below representing the section to extract.\n0. Unpack All");
+					System.out.println(App.LANG_TEXT[App.langIndex][27]);
+					System.out.println("0. "+App.LANG_TEXT[App.langIndex][13]);
 					for (int i=0; i<SECT_NAMES.length; i++) System.out.println((i+1)+". "+SECT_NAMES[i]);
 					String input = sc.nextLine();
 					if (input.matches("\\d+")) sectNum = Integer.parseInt(input);
@@ -130,9 +163,13 @@ public class Main
 				writeSectionToFile(src,map,sectNum);
 				long finish = System.currentTimeMillis();
 				double time = (finish-start)/1000.0;
-				System.out.println("Time: "+time+" s");
+				System.out.println(App.LANG_TEXT[App.langIndex][28].replace("[time]", ""+time+""));
 			}
 		}
-		else gui.App.main(args);
+		else 
+		{
+			isGuiDisabled=false;
+			App.main(args);
+		}
 	}
 }

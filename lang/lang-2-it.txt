@@ -1,0 +1,30 @@
+Sezione MDL da Esportare:
+File
+Aiuto
+Informazioni
+Apri il file...
+Creato da: 
+Ricerca originale da: 
+Ispirato da: 
+Eccezione
+Non è stato fornito nessun file MDL o PAK!
+Estrazione di tutte le sezioni eseguita con successo in X s!
+File PAK non valido! Il suo MDL è inaccessibile a causa di un numero errato& di voci oppure la dimensione del file non uguale alla voce precedente.
+Decomprimi...
+Decomprimi Tutto...
+eseguita con successo in [time] s!
+Lingua
+Coordinate Elementi Distruttibili
+Dati Modelli Mappa
+Map Model Part Data
+Indici Rendering
+Formato Texture Mappa (DBT)
+Distanze di Rendering
+Dati di Collisione
+Dati Elementi Distruttibili
+Parametri Barriera
+Estrazione di [section] da [filename]...
+Inserisci un percorso valido per il file PAK, MDL o UNK della mappa BT3:
+Inserisci uno tra i seguenti numeri che rappresentano la sezione da estrarre:
+Tempo impiegato: [time] s
+Tradotto da:

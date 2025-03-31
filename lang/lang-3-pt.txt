@@ -1,0 +1,30 @@
+Exportar Seção MDL:
+Arquivo
+Ajuda
+Sobre
+Abrir Arquivo...
+Feito por: 
+Pesquisa Feita por: 
+Fortemente inspirado por: 
+Exceção
+Nenhum pacote MDL or PAK file foi selecionado!
+Todas as seções extraidas em [time] segundos!
+Arquivo PAK Invalido! Seu Arquivo MDL não pode ser acessado porque tem o numero errado& de entradas ou o tamanho do arquivo não bate com o tamanho da ultima entrada.
+Descompactar...
+Descompactar Todos...
+extraidas em [time] segundos!
+Linguagem
+Coordenadas de Objetos Destrutitveis
+Data do Modelo do Mapa
+Parte da Data do Modelo do Mapa
+Indices de Renderização
+Container dos Mapas de Textura (DBT)
+Distancia de Renderização
+Dados de Colisão
+Dados dos Objetos Destrutíveis
+Parâmetro da Barreira
+Extraindo [section] de [filename]...
+Coloque um caminho valido para um arquivo PAK, MDL ou UNK valido de um mapa vindo do BT3:
+Coloque um dos números abaixo representando a seção a ser extraida:
+Tempo: [time] segundos
+Traduzido por:
