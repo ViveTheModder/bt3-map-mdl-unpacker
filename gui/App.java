@@ -1,6 +1,6 @@
 package gui;
+//Tenkaichi Map Model Unpacker by ViveTheModder
 import java.awt.Component;
-//Budokai Tenkaichi 3 Map Model Unpacker by ViveTheModder
 import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -18,7 +18,6 @@ import java.io.RandomAccessFile;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Scanner;
-
 import javax.swing.Box;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -66,7 +65,7 @@ public class App
 	private static final Font BOLD_S = new Font("Tahoma", 1, 12);
 	private static final String HTML_A_START = "<html><a href=''>";
 	private static final String HTML_A_END = "</a></html>";
-	private static final String WINDOW_TITLE = "BT3 Map MDL Unpacker";
+	private static final String WINDOW_TITLE = "Tenkaichi Map MDL Unpacker";
 	private static final Toolkit DEF_TOOLKIT = Toolkit.getDefaultToolkit();
 	private static final Image ICON = DEF_TOOLKIT.getImage(ClassLoader.getSystemResource("img/icon.png"));
 	private static final String[][] LANG_NAMES = 

@@ -1,5 +1,5 @@
 package cmd;
-//Budokai Tenkaichi 3 Map Model Unpacker by ViveTheModder
+//Tenkaichi Map Model Unpacker by ViveTheModder
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -76,10 +76,11 @@ public class Main
 		if (fileExt.equals("pak") || fileExt.equals("unk"))
 		{
 			int numSections = LittleEndian.getInt(map.readInt());
-			map.seek(104);
+			map.seek(4+(numSections*4));
+			if (!(numSections>=18 && numSections<=25)) return null;
 			int actualFileSize = (int)map.length();
 			int expectedFileSize = LittleEndian.getInt(map.readInt());
-			if (actualFileSize!=expectedFileSize || numSections!=25) return null;
+			if (actualFileSize!=expectedFileSize) return null;
 			else return map;
 		}
 		else if (fileExt.equals("mdl")) return map;
